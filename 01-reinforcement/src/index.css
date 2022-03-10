@@ -22,3 +22,7 @@ html, body {
 .btn:hover {
   background-color: rgb(146, 55, 231);
 }
+
+.mr-1 {
+  margin-right: 10px;
+}
