@@ -1,5 +1,8 @@
 import { Counter } from './bases/Counter'
 import { CounterBy } from './bases/CounterBy';
+import { CounterEffect } from './bases/CounterEffect';
+import { CounterHook } from './bases/CounterHook';
+import { CounterReducerComponent } from './counter-reducer/CounterReducer';
 
 export const MainApp = () => {
   return (
@@ -8,6 +11,9 @@ export const MainApp = () => {
       <hr />
       <Counter initialValue={ 15 } />
       <CounterBy initialValue={ 15 } />
+      <CounterEffect />
+      <CounterHook />
+      <CounterReducerComponent />
     </>
   )
 }
