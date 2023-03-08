@@ -1,4 +1,3 @@
-import React from 'react'
 import { Product, ProductCard } from '../components/ProductCard';
 
 const product: Product = {
@@ -18,7 +17,17 @@ export const ShoppingPage = () => {
           flexWrap: 'wrap'
         }}
       >
-        <ProductCard product={product}/>
+        <ProductCard product={ product }>
+          <ProductCard.Image />
+          <ProductCard.Title />
+          <ProductCard.Buttons />
+        </ProductCard>
+
+        <ProductCard product={ product }>
+          <ProductCard.Image />
+          <ProductCard.Title title='Another product'/>
+          <ProductCard.Buttons />
+        </ProductCard>
       </div>
     </div>
   )
