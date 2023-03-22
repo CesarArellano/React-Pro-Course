@@ -1,4 +1,6 @@
-import { Product, ProductCard } from '../components/ProductCard';
+import { ProductCard, ProductImage, ProductTitle, ProductButtons } from '../components/index';
+import { Product } from '../interfaces/interfaces';
+
 
 const product: Product = {
   id: '1',
@@ -24,9 +26,9 @@ export const ShoppingPage = () => {
         </ProductCard>
 
         <ProductCard product={ product }>
-          <ProductCard.Image />
-          <ProductCard.Title title='Another product'/>
-          <ProductCard.Buttons />
+          <ProductImage />
+          <ProductTitle title='Another product'/>
+          <ProductButtons />
         </ProductCard>
       </div>
     </div>
