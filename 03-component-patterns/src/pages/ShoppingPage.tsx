@@ -20,15 +20,13 @@ export const ShoppingPage = () => {
         }}
       >
         <ProductCard
-          product={ product }
-          className='bg-dark text-white'  
+          product={ product } 
         >
           <ProductCard.Image className='custom-image' />
           <ProductCard.Title 
             title='Another product'
-            className='text-bold'
           />
-          <ProductCard.Buttons className='custom-buttons' />
+          <ProductCard.Buttons />
         </ProductCard>
 
         <ProductCard
@@ -41,6 +39,18 @@ export const ShoppingPage = () => {
             className='text-bold'
           />
           <ProductButtons className='custom-buttons' />
+        </ProductCard>
+        <ProductCard
+          product={ product }
+          style={{
+            backgroundColor: '#1dfaaa',
+          }}
+        >
+          <ProductImage className='custom-image' />
+          <ProductTitle 
+            title='Another product'
+          />
+          <ProductButtons />
         </ProductCard>
       </div>
     </div>
