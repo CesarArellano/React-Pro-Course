@@ -6,7 +6,7 @@ interface useProductArgs {
   product: Product;
   onChange?: ( args: onChangeArgs ) => void;
   value?: number;
-  initialValues?: InitialValues
+  initialValues?: InitialValues // State Initializater.
 }
 
 export const useProduct = ( { product, onChange, value = 0, initialValues = {} }: useProductArgs ) => {
@@ -41,7 +41,8 @@ export const useProduct = ( { product, onChange, value = 0, initialValues = {} }
 
   return {
     counter,
-    increaseBy
+    increaseBy,
+    maxCount: initialValues?.maxCount
   }
 
 }

@@ -10,7 +10,8 @@ const { Provider } = ProductContext;
 // Extensible Styles Pattern (add className and style)
 export interface Props {
   product: Product;
-  children: ReactElement | ReactElement[];
+  // children?: ReactElement | ReactElement[];
+  children: () => JSX.Element;
   className?: string;
   style?: React.CSSProperties;
   onChange?: ( args: onChangeArgs ) => void;
@@ -19,11 +20,12 @@ export interface Props {
 }
 
 export const ProductCard = ({ children, product, className, style, onChange, value, initialValues }: Props) => {
-  const { counter, increaseBy } = useProduct({ onChange, product, value, initialValues });
+  const { counter, increaseBy, maxCount } = useProduct({ onChange, product, value, initialValues });
   
   return (
     <Provider value={{
       counter,
+      maxCount,
       increaseBy,
       product
     }}>
@@ -31,7 +33,7 @@ export const ProductCard = ({ children, product, className, style, onChange, val
         className={ `${ styles.productCard } ${ className }` }
         style={ style }
       >
-        { children }
+        { children() }
       </div>
     </Provider>
   )
