@@ -39,10 +39,16 @@ export const useProduct = ( { product, onChange, value = 0, initialValues = {} }
     setCounter( newValue )
   }
 
+  const reset = () => {
+    setCounter(initialValues.count || value)
+  }
+
   return {
+    reset,
     counter,
     increaseBy,
-    maxCount: initialValues?.maxCount
+    maxCount: initialValues?.maxCount,
+    isMaxCountReached: !!initialValues?.maxCount && initialValues?.maxCount === counter,
   }
 
 }
