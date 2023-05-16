@@ -1,0 +1,69 @@
+[
+  {
+    "type": "input",
+    "name": "firstName",
+    "placeholder": "César",
+    "label": "First Name",
+    "value": "",
+    "validations": [
+      {
+        "type": "required"
+      },
+      {
+        "type": "minLength",
+        "value": 5
+      }
+    ]
+  },
+  {
+    "type": "input",
+    "name": "lastName",
+    "placeholder": "Arellano",
+    "label": "Last Name",
+    "value": "",
+    "validations": [
+      {
+        "type": "required"
+      }
+    ]
+  },
+  {
+    "type": "email",
+    "name": "email",
+    "placeholder": "cesar.arellano@gmail.com",
+    "label": "Email",
+    "value": "",
+    "validations": [
+      {
+        "type": "required"
+      },
+      {
+        "type": "email"
+      }
+    ]
+  },
+  {
+    "type": "select",
+    "name": "favoriteGame",
+    "label": "Favorite Game",
+    "value": "",
+    "options": [
+      {
+        "id": 1,
+        "label": "Super Mario Smash"
+      },
+      {
+        "id": 2,
+        "label": "Luigi Mansion"
+      },
+      {
+        "id": 3,
+        "label": "Resident Evil"
+      },
+      {
+        "id": 4,
+        "label": "The Legend of Zelda"
+      }
+    ]
+  }
+]
