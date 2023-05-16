@@ -2,8 +2,7 @@
 import logo from '../logo.svg';
 
 import { BrowserRouter, Routes, Route, NavLink, Navigate } from 'react-router-dom'
-import { RegisterPage, FormikBasicPage, FormikYupPage, FormikComponents } from '../03-forms/pages';
-import { FormikAbstraction } from '../03-forms/pages/FormikAbstraction';
+import { RegisterPage, FormikBasicPage, FormikYupPage, FormikComponents, FormikAbstraction } from '../03-forms/pages';
 
 export const Navigation = () => {
   return (
