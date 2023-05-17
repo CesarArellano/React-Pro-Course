@@ -24,8 +24,8 @@ export const Basic: Story = {
 
 export const Secondary: Story = {
   args: {
-    label: 'Secondary',
-    size: 'h3',
+    label: 'My Label',
+    size: 'h2',
     color: 'secondary'
   },
 };
