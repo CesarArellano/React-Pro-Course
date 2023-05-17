@@ -1,7 +1,28 @@
 {
-  "name": "my-storybook",
+  "name": "cmav-my-storybook-components",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "license": "MIT",
+  "typings": "dist/index.d.ts",
+  "main": "",
+  "homepage": "https://cesararellano.github.io/React-Personal-Portfolio/",
+  "repository": {
+    "url": "https://github.com/CesarArellano/React-Pro-Course.git",
+    "type": "github"
+  },
+  "peerDependencies": {
+    "react": ">=16",
+    "typescript": ">=4.0.0"
+  },
+  "release": {
+    "branches": [
+      "master"
+    ]
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -10,17 +31,19 @@
     "@types/node": "^16.18.31",
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
-    "react": "^18.2.0",
+    "react": ">=16",
     "react-dom": "^18.2.0",
-    "typescript": "^4.9.5",
+    "typescript": ">=4.0.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "storybook dev -p 6006",
-    "build": "storybook build",
+    "build": "npm run clean && tsc.cmd && npm run copy-files",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_c928e298e7ac365"
+    "chromatic": "npx chromatic --project-token=chpt_c928e298e7ac365",
+    "clean": "rimraf dist/",
+    "copy-files": "copyfiles -u 1 src/**/*.css dist/"
   },
   "eslintConfig": {
     "extends": [
@@ -50,10 +73,21 @@
     "@storybook/react-vite": "^7.0.12",
     "@storybook/testing-library": "^0.0.14-next.2",
     "chromatic": "^6.17.4",
+    "copyfiles": "^2.4.1",
     "eslint-plugin-storybook": "^0.6.12",
     "prop-types": "^15.8.1",
+    "rimraf": "^5.0.1",
+    "semantic-release": "^21.0.2",
     "storybook": "^7.0.12"
   },
   "readme": "ERROR: No README data found!",
-  "_id": "my-storybook@0.1.0"
+  "_id": "my-storybook@0.1.0",
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    "@semantic-release/github",
+    "@semantic-release/npm",
+    "@semantic-release/git"
+  ]
 }
