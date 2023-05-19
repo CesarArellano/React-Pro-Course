@@ -1,0 +1,123 @@
+html, body {
+  height: 100vh;
+  width: 100%;
+}
+
+.calendar-screen {
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
+}
+
+.rbc-calendar {
+  height: 100vh;
+  padding: 10px 20px;
+}
+
+h1 {
+  padding: 0px 20px;
+}
+
+.modalTitle {
+  padding: 0px 15px;
+}
+
+/* Modal */
+.ReactModalPortal > div{
+  opacity: 0;
+}
+
+.ReactModalPortal .ReactModal__Overlay {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  transition: opacity .2s ease-out;
+  z-index: 999;
+}
+
+.modal-fondo {
+  background-color: rgba(0, 0, 0, 0.4);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  position: fixed;
+}
+
+.ReactModalPortal .ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModalPortal .ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.modal {
+  background: white;
+  border-radius: 20px;
+  color: rgb(51, 51, 51);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+  display: inline;
+  padding: 20px;
+  max-height: 600px;
+  max-width: 500px;
+  outline: none;
+}
+
+/* Datepicker */
+.react-datetime-picker input:focus {
+  outline: none;
+}
+
+.react-datetime-picker__wrapper {
+  border: 0px solid gray !important;
+}
+
+.react-datetime-picker__inputGroup input[type="datetime-local"] {
+  visibility: unset !important;
+}
+
+/* FABS */
+.fab {
+  border-radius: 100%;
+  bottom: 25px;
+  font-size: 30px;
+  padding: 20px;
+  position: fixed;
+  right: 25px;
+  z-index: 100;
+}
+
+.fab-danger {
+  bottom: 25px;
+  padding: 10px;
+  position: fixed;
+  left: 25px;
+  z-index: 100;
+}
+
+.center-complete-box {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.utils__spinner {
+  border: 6px solid rgba(0, 0, 0, 0.1);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border-left-color: #1896d1;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
