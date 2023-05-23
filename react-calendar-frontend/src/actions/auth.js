@@ -58,7 +58,6 @@ export const startChecking = () => {
       }
     } catch(e) {
       Swal.fire('Error', e, 'error');
-      dispatch( checkingFinish() );
     }
     
   }
