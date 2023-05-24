@@ -82,6 +82,36 @@ self.addEventListener('install', async ( event ) => {
   ])
 })
 
+const apiOfflineFallbacks = [
+  'http://localhost:4000/api/events',
+  'http://localhost:4000/api/auth/renew'
+];
+
 self.addEventListener( 'fetch', (event) => {
   console.log(event.request.url);
+
+  // Implement "Network First, cache fallback"
+  const request = event.request;
+  if( !apiOfflineFallbacks.includes( event.request.url ) ) return;
+
+  console.log('Voy a manejar el RENEW y EVENTS', request.url);
+
+  const resp = fetch( request )
+    .then( response => {
+      if( !response ) {
+        return caches.match(request);
+      }
+
+      caches.open('cache-dynamic').then( cache => {
+        cache.put(request, response)
+      });
+      return response.clone();
+    })
+    .catch( err => {
+      console.log('Offline Response', err);
+      return caches.match(request);
+    });
+  
+  event.respondWith(resp);
+
 })
