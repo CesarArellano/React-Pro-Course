@@ -71,8 +71,7 @@ self.addEventListener('message', (event) => {
 
 // Any other custom service worker logic can go here.
 
-self.addEventListener('install', async ( event ) => {
-  console.log('Installing');
+self.addEventListener('install', async ( _ ) => {
   const cache = await caches.open('cache-1')
 
   await cache.addAll([
@@ -94,8 +93,6 @@ self.addEventListener( 'fetch', (event) => {
   const request = event.request;
   if( !apiOfflineFallbacks.includes( event.request.url ) ) return;
 
-  console.log('Voy a manejar el RENEW y EVENTS', request.url);
-
   const resp = fetch( request )
     .then( response => {
       if( !response ) {
@@ -107,8 +104,7 @@ self.addEventListener( 'fetch', (event) => {
       });
       return response.clone();
     })
-    .catch( err => {
-      console.log('Offline Response', err);
+    .catch( _ => {
       return caches.match(request);
     });
   
